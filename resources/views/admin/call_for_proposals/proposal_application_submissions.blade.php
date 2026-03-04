@@ -5,7 +5,8 @@
         
             <div class="flex border-b border-gray-300 py-2 justify-between">
                     <div >
-                        <h1 class="text-2xl font-semibold font-serif text-gray-800">Applications</h1>
+                        <div class="text-lg font-semibold font-serif text-gray-800">Applications</div>
+                        <div class="text-xl font-semibold font-serif text-gray-800">{{ $call_for_proposal->title }}</div>
                     </div>
                     <div>
                             <a href="{{ route('admin.call_for_proposals.index') }}" class="bg-green-600 text-white py-2 px-4 
@@ -21,6 +22,7 @@
                     <td class="text-center font-semibold py-4 w-16">SN</td>
                     <td class="font-semibold py-2">Title</td>
                     <td class="font-semibold py-2">Principal Investigator (PI)</td>
+                    <td class="font-semibold py-2">Applicant</td>
                     <td class="font-semibold py-2">Status</td>
                     <td class="font-semibold py-2 text-center">Action</td>
                 </tr>
@@ -30,12 +32,19 @@
                             <td class="text-center py-8 w-16">{{ $index + 1 }}.</td>
                             <td class="py-8">
                                 <a href="{{ route('admin.call_for_proposals.proposal_application',['call_for_proposal' => $call_for_proposal->id, 'proposal_application' => $application->id ]) }}" class="text-blue-600 hover:underline">{{ $application->proposal_title }}</a>
-                                <div class='text-sm'>
-                                    <a class="hover:underline"  href="{{ asset('storage/'.$application->proposal_file) }}" 
-                                                    target="_blank">Proposal document</a>
+                                <div class='flex flex-col md:flex-row gap-x-5 text-sm'>
+                                        <div>
+                                            <a class="hover:underline"  href="{{ asset('storage/'.$application->proposal_title_file) }}" 
+                                                    target="_blank">Proposal Title</a>
+                                        </div>
+                                        <div>
+                                            <a class="hover:underline"  href="{{ asset('storage/'.$application->proposal_file) }}" 
+                                                    target="_blank">Proposal Document</a>
+                                        </div>
                                 </div>
                             </td>
                             <td class="py-8">{{ $application->principal_investigator }}</td>
+                            <td class="py-8">{{ $application->owner->surname }} {{ $application->owner->firstname }} </td>
                             <td class="py-8">
                                 @if ($application->status == 'pending')
                                     <span class="text-amber-600 font-semibold">Pending</span>

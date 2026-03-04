@@ -103,16 +103,47 @@
     
                         
                         
-    
+                        <!-- Proposal file //-->
+                        <div class="flex flex-col border-red-900 w-[80%] md:w-[60%] py-2">
+                                                    
+                                            <div class='px-1 py-1'>Proposal Title Page</div>
+                                            <a type='text' name="proposal_title_file" class="border border-1 border-gray-400 bg-gray-50
+                                                                                    w-full p-4 rounded-md 
+                                                                                    focus:outline-none
+                                                                                    focus:border-blue-500 
+                                                                                    focus:ring
+                                                                                    focus:ring-blue-100
+                                                                                    hover:underline
+                                                                                    text-blue-600
+                                                                                    text-sm
+                                                                                    " 
+                                            
+                                            style="font-family:'Lato';font-size:16px;font-weight:500;"
+                                            accept=".docx, .pdf, .doc, .odt"
+                                            href="{{ asset('storage/'.$proposal_application->proposal_title_file) }}"
+                                            target="_blank"
+                                            required
+                                            >{{ $proposal_application->proposal_title_file }}</a>
+                                                
+                    
+                                            @error('proposal_title_file')
+                                                <span class="text-red-700 text-sm">
+                                                    {{$message}}
+                                                </span>
+                                            @enderror
+                                            
+                        </div>
+                        <!-- end of Proposal Title file //-->      
+
                        
                         
                         
                         
 
-                         <!-- Proposal file //-->
+                        <!-- Proposal file //-->
                         <div class="flex flex-col border-red-900 w-[80%] md:w-[60%] py-2">
                                                     
-                                            <div class='px-1 py-1'>Proposal File</div>
+                                            <div class='px-1 py-1'>Proposal Document</div>
                                             <a type='text' name="proposal_file" class="border border-1 border-gray-400 bg-gray-50
                                                                                     w-full p-4 rounded-md 
                                                                                     focus:outline-none
@@ -121,6 +152,7 @@
                                                                                     focus:ring-blue-100
                                                                                     hover:underline
                                                                                     text-blue-600
+                                                                                    text-sm
                                                                                     " 
                                             
                                             style="font-family:'Lato';font-size:16px;font-weight:500;"

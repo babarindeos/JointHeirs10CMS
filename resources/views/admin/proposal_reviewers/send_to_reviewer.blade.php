@@ -43,19 +43,19 @@
                         <div class="flex flex-col border-red-900 w-[80%] md:w-[60%] py-3">
                         
                             
-                            <input type="text" disabled name="title" class="border border-1 border-gray-400 bg-gray-50
+                            <input disabled name="title" class="border border-1 border-gray-400 bg-gray-50
                                                                     w-full p-4 rounded-md 
                                                                     focus:outline-none
                                                                     focus:border-blue-500 
                                                                     focus:ring
                                                                     focus:ring-blue-100" placeholder="Title"
-                                                                    
+
                                                                     value="{{ $proposal_application->proposal_title }}"
-                                                                    
                                                                     style="font-family:'Lato';font-size:16px;font-weight:500;"                                                                     
                                                                     
-                                                                    />  
-                                                                                                                                        
+                                                                    />
+                                                                    <span><div class='text-sm underline text-blue-700 py-1'><a href="{{ asset('storage/'.$proposal_application->proposal_file) }}">{{ $proposal_application->proposal_file }}</a></div></span>                                                                   
+                                                                    
     
                                                                     @error('title')
                                                                         <span class="text-red-700 text-sm">
@@ -70,7 +70,7 @@
                         <div class="flex flex-col border-red-900 w-[80%] md:w-[60%] py-3">
                         
                             
-                            <select type="text" name="reviewer" class="border border-1 border-gray-400 bg-gray-50
+                            <select type="text" name="reviewer"  class="border border-1 border-gray-400 bg-gray-50
                                                                     w-full p-4 rounded-md 
                                                                     focus:outline-none
                                                                     focus:border-blue-500 
@@ -120,29 +120,54 @@
         <!-- End of Create Call for Proposals Section //-->
 
 
-         <section class="py-2 mt-1 border-0 w-[60%] mx-auto ">
+         <section class="py-2 mt-1 border-0 w-[60%] mx-auto mb-5">
                 <div>
                     <div class="flex flex-col mx-auto w-full md:w-[95%] items-start justify-start">
-                        <div class='font-semibold text-lg'>
-                            Reviewers ({{ $proposal_application->reviews->count() }})
-                        </div>
+                        <table class='w-full'>
+                            <tr class='border' >
+                                <td class='text-gray-800 p-4 font-semibold border' colspan='3'>
+                                     Reviewers ({{ $proposal_application->reviews->count() }})
+                                </td>
+                            </tr>
+                            <tr class='border' >
+                                <td class='text-gray-800 p-4 font-semibold border' >
+                                     SN 
+                                </td>
+                                 <td class='text-gray-800 p-4 font-semibold border' >
+                                     Names
+                                </td>
+                                 <td class='text-gray-800 p-4 font-semibold border' >
+                                     Action
+                                </td>
+                            </tr>
+                            <tbody>
+                                 @php
+                                    $counter = 0;
+                                 @endphp
 
-                        @php
-                            $counter = 0;
-                        @endphp
-                        @foreach($proposal_application->reviews as $review)
-                        <div class='flex flex-row gap-3 py-3 border-b w-full items-center'>
-                             <div>{{ ++$counter }}.</div>
-                             <div class='flex flex-row border-0 items-center justify-center gap-10'>
-                                <div>{{ $review->reviewer->name }}</div>
-                                <form action='' method='post'>
-                                    @csrf
-                                    <button type='submit' class='text-xs border rounded-md py-2 px-4 border-red-500 '>Remove</button>
-                                </form>
-                             </div>
-                        </div>
+                                 @foreach($proposal_application->reviews as $review)
+                                        <tr class='border'>
+                                            <td class='border-0 text-center' width='10%'> {{ ++$counter }}.</td>
+                                            <td class='py-4 px-4' width='80%'>
+                                                <div>{{ $review->reviewer->name }}</div>
+                                            </td>
+                                            <td class='border-0'>
+                                                <form action='' method='post'>
+                                                    @csrf
+                                                    <button type='submit' class='text-xs border rounded-md py-2 px-4 border-red-500 '>Remove</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                @endforeach
 
-                        @endforeach
+                            </tbody>
+                        </table>
+                        
+
+                       
+                        
+
+                        
                     </div>
                    
                         

@@ -35,7 +35,7 @@
                                         <a class="hover:underline" href="{{ route('admin.call_for_proposals.submissions',['call_for_proposal' => $call_for_proposal->id]) }}">Submissions ({{ $call_for_proposal->proposal_applications->count() }})</a>
                                     </div>
                                      <div>
-                                        <a class="hover:underline" href="">Reviews ({{ $call_for_proposal->reviews->count() }})</a>
+                                        <a class="hover:underline" href="">Sent for Review ({{ $call_for_proposal->reviews->count() }})</a>
                                     </div>
                                      <div>
                                         <a class="hover:underline" href="">Reviewed ()</a>
