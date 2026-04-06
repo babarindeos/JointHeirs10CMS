@@ -4,6 +4,6 @@
                 $year = Date('Y');
                
             @endphp
-            Directorate of Research, Innovations and Partnerships, FUNAAB. &copy;{{ $year }} All rights reserved.   
+            JointHeirs10. &copy;2020 - {{ $year }}. All rights reserved.   
     </div>
 </footer>

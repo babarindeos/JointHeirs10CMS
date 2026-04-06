@@ -16,12 +16,12 @@ class Admin_AuthController extends Controller
 
         /*
          User::create([
-            'fileno' => 'sp1706',
-            'firstname' => 'Oluwaseyi',
-            'surname' => 'Babarinde',
+            'fileno' => 'Admin',
+            'firstname' => 'Soyinka',
+            'surname' => 'Olabode',
             'middlename' => 'Abiodun',
-            'email' => 'seyibabs.ng@gmail.com',
-            'password' => bcrypt('123456'),
+            'email' => 'olabode@gmail.com',
+            'password' => bcrypt('soyinka2020'),
             'role' => 'admin'
 
         ]);   

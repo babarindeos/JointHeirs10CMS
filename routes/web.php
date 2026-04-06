@@ -33,6 +33,11 @@ use App\Http\Controllers\Admin\Admin_ReviewerController;
 
 use App\Http\Controllers\Admin\Admin_ProposalReviewerController;
 
+use App\Http\Controllers\Admin\Admin_MemberController;
+use App\Http\Controllers\Admin\Admin_BankController;
+use App\Http\Controllers\Admin\Admin_PaymentController;
+
+
 use App\Http\Controllers\Staff\Staff_AuthController;
 use App\Http\Controllers\Staff\Staff_DashboardController;
 use App\Http\Controllers\Staff\Staff_DocumentController;
@@ -384,6 +389,26 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
     Route::post('call_for_proposals/proposal_applications/{proposal_application}/proposal_application/send_to_reviewer', [Admin_ProposalReviewerController::class, 'post_send_to_reviewer'])->name('admin.call_for_proposals.proposal_application.send_to_reviewer.store');
     
     
+    Route::get('members', [Admin_MemberController::class, 'index'])->name('admin.members.index');
+    Route::get('members/create', [Admin_MemberController::class, 'create'])->name('admin.members.create');
+    Route::post('members/create', [Admin_MemberController::class, 'store'])->name('admin.members.store');
+    Route::get('members/{uuid}/show', [Admin_MemberController::class, 'show'])->name('admin.members.show');
+    Route::get('members/{uuid}/edit', [Admin_MemberController::class, 'edit'])->name('admin.members.edit');
+    Route::post('members/{uuid}/update', [Admin_MemberController::class, 'update'])->name('admin.members.update');
+
+
+    Route::get('banks', [Admin_BankController::class, 'index'])->name('admin.banks.index');
+    Route::get('banks/create', [Admin_BankController::class, 'create'])->name('admin.banks.create');
+    Route::post('banks/create', [Admin_BankController::class, 'store'])->name('admin.banks.store');
+
+    Route::get('payments', [Admin_PaymentController::class, 'index'])->name('admin.payments.index');
+    Route::get('payments/create', [Admin_PaymentController::class, 'create'])->name('admin.payments.create');
+    Route::post('payments/create', [Admin_PaymentController::class, 'store'])->name('admin.payments.store');
+    Route::post('payments/preview', [Admin_PaymentController::class, 'preview'])->name('admin.payments.preview');
+    Route::get('payments/{payment}/show', [Admin_PaymentController::class, 'show'])->name('admin.payments.show');
+    Route::get('payments/{payment}/edit', [Admin_PaymentController::class, 'edit'])->name('admin.payments.edit');
+    Route::post('payments/{payment}/update', [Admin_PaymentController::class, 'update'])->name('admin.payments.update');
+    Route::get('payments/{reference_id}/payment/show', [Admin_PaymentController::class, 'show_by_reference_id'])->name('admin.payments.show_by_reference_id');
 
 
 });

@@ -26,11 +26,11 @@
                                         </div>                            
                                     
                                         <div class="text-sm text-white font-normal">
-                                            Call for Proposals
+                                            Members
                                         </div>
                                     </div>
                                     <div class="w-1/4 flex justify-center items-center border-0">
-                                        <i class="fa-regular fa-file text-4xl text-white opacity-50 "></i>
+                                        <i class="fa-solid fa-users text-4xl text-white opacity-50 "></i>
                                     </div>
 
                             </div>
@@ -49,12 +49,12 @@
                                         </div>                            
                                     
                                         <div class="text-sm text-white font-normal">
-                                            Conferences
+                                            Savings
                                         </div>
                                     </div>
                                     <div class="w-1/4 flex justify-center items-center border-0">
-                                        
-                                        <i class="fa-solid fa-person-digging text-4xl text-white opacity-50 "></i>
+                                        <i class="fa-solid fa-piggy-bank text-4xl text-white opacity-50"></i>
+                                       
                                     </div>
 
                             </div>
@@ -74,12 +74,12 @@
                                         </div>                            
                                     
                                         <div class="text-sm text-white font-normal">
-                                            Applications for Calls
+                                            Loans
                                         </div>
                                     </div>
                                     <div class="w-1/4 flex justify-center items-center border-0">
+                                        <i class="fa-solid fa-hand-holding-dollar text-4xl text-white opacity-50"></i>
                                         
-                                        <i class="fa-solid fa-users text-4xl text-white opacity-50 "></i>
                                     </div>
 
                             </div>
@@ -98,7 +98,7 @@
                                         </div>                            
                                     
                                         <div class="text-sm text-white font-normal">
-                                            Reviewers
+                                            Loan Applications
                                         </div>
                                     </div>
                                     <div class="w-1/4 flex justify-center items-center border-0">

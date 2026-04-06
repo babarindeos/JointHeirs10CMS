@@ -1,6 +1,6 @@
-<header class="flex flex-col shadow-md bg-gradient-to-b from-green-700 to-green-500">
+<header class="flex flex-col shadow-md bg-gradient-to-b from-blue-700 to-blue-500">
     
-    <nav class="py-3 border-0">
+    <nav class="py-3 border-0 py-2">
         <div class="max-w-8xl mx-auto px-2 sm:px-8 lg:px-4">
             <div class="flex items-center justify-between h-16">
 
@@ -8,13 +8,13 @@
                 <div class="flex flex-shrink-0">
                     <!-- logo //-->
                     <div class="flex flex-row px-2 md:px-4 py-2">
-                        <img src="{{ asset('images/logo.png')}}" />
+                        <img src="{{ asset('images/logo.png')}}" class='hidden' />
                     </div>
                     <!-- end of logo //-->
                     <!-- Name //-->
                     <div class="flex flex-col item-center justify-center">
-                            <div class="text-white font-bold text-2xl font-serif">DRIP</div>
-                            <div class="text-white font-semibold font-serif text-xs opacity-70">Directorate of Research, Innovations and Partnerships</div>
+                            <div class="text-white font-bold text-2xl font-serif">JointHeirs10</div>
+                            <div class="text-white font-semibold font-serif text-xs opacity-70">Cooperative Multi-purpose Society</div>
                                 
                     </div>
                     <!-- end of name //-->
@@ -34,20 +34,69 @@
                             <a href='{{ route('admin.dashboard.index') }}' class="flex font-semibold items-center text-white hover:border-b-yellow-100 hover:border-b-4 mx-2 ">Dashboard</a>
 
                             
-                            <a  href="{{ route('admin.call_for_proposals.index') }}" class="flex font-semibold items-center text-white hover:border-b-yellow-100 hover:border-b-4 mx-3 ">Call for Proposals</a>
-                            <a  href="{{ route('admin.reviewers.index') }}" class="flex font-semibold items-center text-white hover:border-b-yellow-100 hover:border-b-4 mx-3">Reviewers</a>
-                            <div class="relative group hidden">
+                            
+                            <div class="relative group">
                                 <button class="text-white px-1 py-2 rounded-md font-semibold">
-                                    Documents
+                                    Members
                                 </button>
                                 <!-- Sub-menu -->
-                                <div class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 shadow-lg w-[240%] hidden">
-                                    <a href="{{ route('admin.admin_documents.index')}}" class="flex flex-row px-4 py-2 hover:bg-gray-200 hover:border-l-yellow-500 hover:border-l-4 pr-8">Admin Documents</a>
-                                    <a href="{{ route('admin.documents.index')}} " class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-">Documents</a>
-                                    <a href="{{ route('admin.documents.index') }}" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8">Requests</a>
+                                <div class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 shadow-lg w-[320%]">
+                                    <a href="{{ route('admin.members.index') }}" class="flex flex-row px-4 py-2 hover:bg-gray-200 hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-users pr-2 text-sm text-gray-500"></i> Manage Members</a>
+                                    <a href="{{ route('admin.members.create') }}" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-user-plus pr-2 text-sm text-gray-500"></i>Create Member</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-user-minus pr-2 text-sm text-gray-500"></i> Withdraw Membership</a>
 
                                 </div>
                             </div>
+
+
+
+                            <div class="relative group">
+                                <button class="text-white px-1 py-2 rounded-md font-semibold">
+                                    Uploads
+                                </button>
+                                <!-- Sub-menu -->
+                                <div class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 shadow-lg w-[320%]">
+                                    <a href="{{ route('admin.payments.index') }}" class="flex flex-row px-4 py-2 hover:bg-gray-200 hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-regular fa-money-bill-1 pr-2 text-sm text-gray-500"></i> Monthly Payments</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-hand-holding-usd pr-2 text-sm text-gray-500"></i> Monthly Loans</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-archive pr-2 text-sm text-gray-500"></i> Archive</a>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="relative group">
+                                <button class="text-white px-1 py-2 rounded-md font-semibold">
+                                    Savings
+                                </button>
+                                <!-- Sub-menu -->
+                                <div class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 shadow-lg w-[320%]">
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200 hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"> <i class="fa-solid fa-sack-dollar pr-2 text-sm text-gray-500"></i> All Savings</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-hand-holding-usd pr-2 text-sm text-gray-500"></i> Registration Fees</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-regular fa-building pr-2 text-sm text-gray-500"></i> Building Fund</a>
+
+                                </div>
+                            </div>
+
+
+                            <div class="relative group">
+                                <button class="text-white px-1 py-2 rounded-md font-semibold">
+                                    Loans
+                                </button>
+                                <!-- Sub-menu -->
+                                <div class="absolute hidden group-hover:block bg-white text-gray-800 mt-0 py-2 shadow-lg w-[420%]">
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200 hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"> <i class="fa-solid fa-sack-dollar pr-2 text-sm text-gray-500"></i> All Loans</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-solid fa-user-tag pr-2 text-sm text-gray-500"></i> Member Loans</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-regular fa-file pr-2 text-sm text-gray-500"></i> Loan Applications</a>
+                                    <a href="#" class="flex flex-row px-4 py-2 hover:bg-gray-200  hover:border-l-yellow-500 hover:border-l-4 pr-8 items-center"><i class="fa-regular fa-file pr-2 text-sm text-gray-500"></i> Loan Types</a>
+
+                                </div>
+                            </div>
+
+
+                            <a  href="{{ route('admin.call_for_proposals.index') }}" class="flex font-semibold items-center text-white hover:border-b-yellow-100 hover:border-b-4 mx-3 ">Messages</a>
+                            <a  href="{{ route('admin.reviewers.index') }}" class="flex font-semibold items-center text-white hover:border-b-yellow-100 hover:border-b-4 mx-3">Broadcasts</a>
+                            <a  href="{{ route('admin.banks.index') }}" class="flex font-semibold items-center text-white hover:border-b-yellow-100 hover:border-b-4 mx-3">Banks</a>
                             
                             
                             <form action="{{ route('admin.auth.logout') }}" method="POST" class="flex items-center justify-center border-0">

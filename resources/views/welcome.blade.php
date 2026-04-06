@@ -1,64 +1,23 @@
 <x-guest-layout>
-<div class="flex flex-col w-full borders h-full">
+<div class="flex flex-col w-full borders h-full ">
 
-    <div class="flex flex-col md:flex-row  ">
+    <div class="flex flex-col md:flex-row ">
             <!-- left  panel //-->
-            <div class="order-2 md:order-1 flex flex-col w-full w-[90%] md:w-[70%] gap-6 mt-4 py-5">
-                @if ($call_for_proposals->count())
-                            @foreach ($call_for_proposals as $call_for_proposal)
-                                
-                            
-                                    <div class="mx-auto w-[95%] md:w-[90%] flex flex-col py-6 border rounded-md px-4 shadow-md border-green-700">
-                                            <div class='text-xl md:text-2xl font-semibold border-b border-gray-300 text-green-800'>{{ $call_for_proposal->title }}</div>
-                                            <div class='py-4'>{{ $call_for_proposal->description }}</div>
-                                            <div class="flex flex-col md:flex-row gap-x-20 ">
-                                                <div><strong>Opening Date:</strong> {{ Carbon\Carbon::parse($call_for_proposal->open_date)->format('l jS F, Y') }}</div>
-                                                <div><strong>Closing Date:</strong> {{ Carbon\Carbon::parse($call_for_proposal->close_date)->format('l jS F, Y') }}</div>
-                                            </div>
-                                            <div>
-                                            
-                                                    @php
-                                                        $advert = $call_for_proposal->advert;
-                                                    @endphp
+             <div class="flex flex-col w-full md:w-[70%] " >
+                    <img src="{{ asset('images/1.webp') }}" id='img1' class="bg-gray-800" /> 
+                    <img src="{{ asset('images/2.webp') }}" id='img2' class="hidden" />
+                    <img src="{{ asset('images/3.webp') }}" id='img3' class="hidden" /> 
+                    <img src="{{ asset('images/4.webp') }}" id='img4' class="hidden" /> 
+                    <div>
+                        <div class="flex flex-row items-center justify-center space-x-4 py-4">
+                            <div class='py-1 px-10 bg-green-500 rounded-md' id='ind1'></div>
+                            <div class='py-1 px-10 bg-gray-200 rounded-md' id='ind2'></div>
+                            <div class='py-1 px-10 bg-gray-200 rounded-md' id='ind3'></div>
+                            <div class='py-1 px-10 bg-gray-200 rounded-md' id='ind4'></div>
 
-                                                 
-                                                        <div class="flex flex-row justify-between items-center mt-4 border-0 ">
-                                                            
-                                                            <div>
-                                                                @if ($advert)
-                                                                    <a 
-                                                                        href="{{ asset('storage/'.$advert) }}" 
-                                                                        target="_blank"
-                                                                        class="text-blue-600 hover:underline text-md"
-                                                                    >
-                                                                        View Advert
-                                                                    </a>  
-                                                                 @endif
-                                                            </div>
-                                                           
-                                                            
-                                                            <div class="flex flex-col justify-center items-center border-0">
-                                                                    @if (\Carbon\Carbon::now()->between(\Carbon\Carbon::parse($call_for_proposal->open_date), \Carbon\Carbon::parse($call_for_proposal->close_date)))
-                                                                        <a href="#" class='font-semibold py-2 px-4 bg-green-500 text-white text-sm md:text-md rounded-md'>Login and Apply for this call</a>
-                                                                    @else
-                                                                        <div class='font-semibold py-2 px-4 bg-red-400 text-white text-sm md:text-md rounded-md'>Application has Closed</div>
-                                                                                    
-                                                                    @endif      
-                                                                    
-                                                            </div>     
-                                                        </div>
-                                                    
-
-                                            </div>
-                                    </div>
-
-                            @endforeach   
-                            
-                            <div class='px-3 md:px-14'>{{  $call_for_proposals->links() }}</div> 
-                   
-                @endif
-            
-                 
+                        </div>
+                    </div>
+                    
                     
             </div>
             <!-- end of left panel //-->
@@ -141,7 +100,7 @@
                             </div>
 
                             <!-- end of submit //-->
-                            <div class='w-[80%] py-4'>Don't have an account? <a href="{{ route('guest.auth.register') }}" class='underline'>Register</a>   </div>
+                            <div class='w-[80%] py-4 hidden'>Don't have an account? <a href="{{ route('guest.auth.register') }}" class='underline'>Register</a>   </div>
                         </form>
                         
                     </div>
@@ -159,3 +118,83 @@
 
 </div>
 </x-guest-layout>
+<script>
+    $(document).ready(function(){
+            function functionOne() {
+                $("#img1").show();
+                $("#img2").hide();
+                $("#img3").hide();
+                $("#img4").hide();
+
+                $("#ind1").removeClass('bg-gray-200').addClass('bg-green-500');
+                $("#ind2").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind3").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind4").removeClass('bg-green-500').addClass('bg-gray-200');
+            }
+
+            function functionTwo() {
+                $("#img1").hide();
+                $("#img2").show();
+                $("#img3").hide();
+                $("#img4").hide();
+
+                $("#ind1").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind2").removeClass('bg-gray-200').addClass('bg-green-500');
+                $("#ind3").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind4").removeClass('bg-green-500').addClass('bg-gray-200');
+            }
+
+
+            function functionThree() {
+                $("#img1").hide();
+                $("#img2").hide();
+                $("#img3").show();
+                $("#img4").hide();
+
+                $("#ind1").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind2").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind3").removeClass('bg-gray-200').addClass('bg-green-500');
+                $("#ind4").removeClass('bg-green-500').addClass('bg-gray-200');
+            }
+
+
+            function functionFour() {
+                $("#img1").hide();
+                $("#img2").hide();
+                $("#img3").hide();
+                $("#img4").show();
+
+                $("#ind1").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind2").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind3").removeClass('bg-green-500').addClass('bg-gray-200');
+                $("#ind4").removeClass('bg-gray-200').addClass('bg-green-500');
+            }
+
+            let toggle = true;
+
+            functionOne();
+
+            let counter = 1;
+
+            setInterval(function () {
+                if (counter === 1) {
+                    functionTwo();
+                    counter = 2;
+                } else if (counter === 2) {
+                    functionThree();
+                    counter = 3;
+                } else if (counter === 3) {
+                    functionFour();
+                    counter = 4;
+                }                
+                else 
+                {
+                    functionOne();
+                    counter = 1;
+                }
+            }, 10000); // every 10 seconds
+
+    });
+
+
+</script>

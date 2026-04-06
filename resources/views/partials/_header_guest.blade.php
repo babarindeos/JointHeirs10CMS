@@ -1,4 +1,4 @@
-<header class="flex flex-col shadow-md bg-gradient-to-b from-green-700 to-green-500">
+<header class="flex flex-col shadow-md bg-gradient-to-b from-blue-700 to-blue-500">
     
 
     <!-- header bar //-->
@@ -6,13 +6,13 @@
         <a href="/" class="flex">
             <!-- logo //-->
             <div class="flex flex-row px-2 md:px-6 py-2">
-                <img src="{{ asset('images/logo.png')}}" />
+                <img src="{{ asset('images/logo.png')}}" class='hidden' />
             </div>
             <!-- end of logo //-->
             <!-- Name //-->
-            <div class="flex flex-col item-center justify-center">
-                    <div class="text-white font-bold text-2xl font-serif">DRIP</div>
-                    <div class="text-white font-semibold font-serif text-sm opacity-80">Directorate of Research, Innovations and Partnerships</div>
+            <div class="flex flex-col item-center justify-center py-2">
+                    <div class="text-white font-bold text-2xl font-serif">JointHeirs10</div>
+                    <div class="text-white font-semibold font-serif text-sm opacity-80">Cooperative Multi-purpose Society</div>
             </div>
             <!-- end of name //-->
         </a>
